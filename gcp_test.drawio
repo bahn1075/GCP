@@ -1,58 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mxGraphModel dx="1002" dy="1002" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
-  <root>
-    <mxCell id="0" />
-    <mxCell id="1" parent="0" />
-    
-    <!-- GCP VPC -->
-    <mxCell id="vpc" value="VPC 10.0.0.0/16" style="shape=cloud;fillColor=#4387FD;strokeColor=#FFFFFF;fontColor=#FFFFFF;" vertex="1" parent="1">
-      <mxGeometry x="50" y="50" width="700" height="500" as="geometry" />
-    </mxCell>
-    
-    <!-- Public Subnet 1 -->
-    <mxCell id="public-subnet-1" value="Public Subnet 1\n10.0.1.0/24" style="shape=rectangle;rounded=1;fillColor=#AECBFA;strokeColor=#3367D6;" vertex="1" parent="vpc">
-      <mxGeometry x="80" y="100" width="200" height="100" as="geometry" />
-    </mxCell>
-    
-    <!-- Web Server -->
-    <mxCell id="web-server-1" value="Compute Engine (Web Server)" style="shape=mxgraph.gcp.compute;fillColor=#FFFFFF;" vertex="1" parent="public-subnet-1">
-      <mxGeometry x="20" y="20" width="50" height="50" as="geometry" />
-    </mxCell>
-    
-    <!-- Cloud NAT -->
-    <mxCell id="cloud-nat" value="Cloud NAT" style="shape=mxgraph.gcp.networking;fillColor=#FFFFFF;" vertex="1" parent="public-subnet-1">
-      <mxGeometry x="120" y="20" width="50" height="50" as="geometry" />
-    </mxCell>
-    
-    <!-- Private Subnet 1 -->
-    <mxCell id="private-subnet-1" value="Private Subnet 1\n10.0.2.0/24" style="shape=rectangle;rounded=1;fillColor=#AECBFA;strokeColor=#3367D6;" vertex="1" parent="vpc">
-      <mxGeometry x="80" y="250" width="200" height="100" as="geometry" />
-    </mxCell>
-    
-    <!-- App Server -->
-    <mxCell id="app-server-1" value="Compute Engine (App Server)" style="shape=mxgraph.gcp.compute;fillColor=#FFFFFF;" vertex="1" parent="private-subnet-1">
-      <mxGeometry x="20" y="20" width="50" height="50" as="geometry" />
-    </mxCell>
-    
-    <!-- Cloud SQL Primary -->
-    <mxCell id="cloud-sql-primary" value="Cloud SQL (Primary)" style="shape=mxgraph.gcp.databases;fillColor=#FFFFFF;" vertex="1" parent="private-subnet-1">
-      <mxGeometry x="120" y="20" width="50" height="50" as="geometry" />
-    </mxCell>
-    
-    <!-- HTTP(S) Load Balancer -->
-    <mxCell id="lb" value="HTTP(S) Load Balancer" style="shape=mxgraph.gcp.networking;fillColor=#FFFFFF;" vertex="1" parent="vpc">
-      <mxGeometry x="300" y="80" width="100" height="50" as="geometry" />
-    </mxCell>
-    
-    <!-- Cloud Armor -->
-    <mxCell id="cloud-armor" value="Cloud Armor" style="shape=mxgraph.gcp.security;fillColor=#FFFFFF;" vertex="1" parent="lb">
-      <mxGeometry x="20" y="20" width="50" height="50" as="geometry" />
-    </mxCell>
-    
-    <!-- Cloud CDN -->
-    <mxCell id="cloud-cdn" value="Cloud CDN" style="shape=mxgraph.gcp.networking;fillColor=#FFFFFF;" vertex="1" parent="lb">
-      <mxGeometry x="120" y="20" width="50" height="50" as="geometry" />
-    </mxCell>
-    
-  </root>
-</mxGraphModel>
+<mxfile host="app.diagrams.net" modified="2025-03-10T05:22:18.896Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="3Uj4Y884kND-uwxMgjSg" version="23.3.0" type="device">
+  <diagram name="페이지-1" id="kI111JXkQ17e0ZZzia-x">
+    <mxGraphModel dx="1414" dy="790" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="rAz4lTf7Gwv7dpfLh9yZ-1" value="Region" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fillColor=#f8cecc;strokeColor=#B85450;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="730" height="680" as="geometry"/>
+        </mxCell>
+        <mxCell id="rAz4lTf7Gwv7dpfLh9yZ-2" value="Availability Zone A" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fillColor=#dae8fc;strokeColor=#6C8EBF;" vertex="1" parent="rAz4lTf7Gwv7dpfLh9yZ-1">
+          <mxGeometry x="30" y="50" width="320" height="590" as="geometry"/>
+        </mxCell>
+        <mxCell id="rAz4lTf7Gwv7dpfLh9yZ-3" value="Availability Zone B" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fillColor=#dae8fc;strokeColor=#6C8EBF;" vertex="1" parent="rAz4lTf7Gwv7dpfLh9yZ-1">
+          <mxGeometry x="380" y="50" width="320" height="590" as="geometry"/>
+        </mxCell>
+        <mxCell id="rAz4lTf7Gwv7dpfLh9yZ-4" value="VPC&#xa;10.0.0.0/16" style="group;rounded=1;" vertex="1" parent="rAz4lTf7Gwv7dpfLh9yZ-1">
+          <mxGeometry x="10" y="10" width="710" height="660" as="geometry"/>
+          <mxRectangle x="10" y="10" width="710" height="30" as="bounds"/>
+          <mxCell id="rAz4lTf7Gwv7dpfLh9yZ-5" value="VPC" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="rAz4lTf7Gwv7dpfLh9yZ-4">
+            <mxGeometry x="0" y="0" width="710" height="30" as="geometry"/>
+          </mxCell>
+          <mxCell id="rAz4lTf7Gwv7dpfLh9yZ-6" value="" style="group" vertex="1" parent="rAz4lTf7Gwv7dpfLh9yZ-4">
+            <mxGeometry x="20" y="70" width="280" height="120" as="geometry"/>
+            <mxRectangle x="20" y="70" width="280" height="30" as="bounds"/>
+            <mxCell id="rAz4lTf7Gwv7dpfLh9yZ-7" value="Public subnet 1&#xa;10.0.1.0/24" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=1;fontColor=#000000;" vertex="1" parent="rAz4lTf7Gwv7dpfLh9yZ-6">
+              <mxGeometry x="0" y="0" width="280" height="30" as="geometry"/>
+            </mxCell>
+            <mxCell id="rAz4lTf7Gwv7dpfLh9yZ-8" value="Compute Engine" style="gcpComputeEngine;aspect=fixed;html=1;" vertex="1" parent="rAz4lTf7Gwv7dpfLh9yZ-6">
+              <mxGeometry x="90" y="50" width="100" height="70" as="geometry"/>
+            </mxCell>
+            <mxCell id="rAz4lTf7Gwv7dpfLh9yZ-9" value="Web Server" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="rAz4lTf7Gwv7dpfLh9yZ-6">
+              <mxGeometry x="105" y="140" width="70" height="30" as="geometry"/>
+            </mxCell>
+          </mxCell>
+          <mxCell id="rAz4lTf7Gwv7dpfLh9yZ-10" value="" style="group" vertex="1" parent="rAz4lTf7Gwv7dpfLh9yZ-4">
+            <mxGeometry x="370" y="70" width="280" height="120" as="geometry"/>
+            <mxRectangle x="370" y="70" width="280" height="30" as="bounds"/>
+            <mxCell id="rAz4lTf7Gwv7dpfLh9yZ-11" value="Public subnet 4&#xa;10.0.4.0/24" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=1;fontColor=#000000;" vertex="1" parent="rAz4lTf7Gwv7dpfLh9yZ-10">
+              <mxGeometry x="0" y="0" width="280" height="30" as="geometry"/>
+            </mxCell>
+            <mxCell id="rAz4lTf7Gwv7dpfLh9yZ-12" value="Compute Engine" style="gcpComputeEngine;aspect=fixed;html=1;" vertex="1" parent="rAz4lTf7Gwv7dpfLh9yZ-10">
+              <mxGeometry x="90" y="50" width="100" height="70" as="geometry"/>
+            </mxCell>
+            <mxCell id="rAz4lTf7Gwv7dpfLh9yZ-13" value="Web Server" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="rAz4lTf7Gwv7dpfLh9yZ-10">
+              <mxGeometry x="105" y="140" width="70" height="30" as="geometry"/>
+            </mxCell>
+          </mxCell>
+          <mxCell id="rAz4lTf7Gwv7dpfLh9yZ-14" value="" style="group" vertex="1" parent="rAz4lTf7Gwv7dpfLh9yZ-4">
+            <mxGeometry x="20" y="230" width="280" height="120" as="geometry"/>
+            <mxRectangle x="20" y="230" width="280" height="30" as="bounds"/>
+            <mxCell id="rAz4lTf7Gwv7dpfLh9yZ-15" value="Private subnet 2&#xa;10.0.2.0/24" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=1;fontColor=#000000;" vertex="1" parent="rAz4lTf7Gwv7dpfLh9yZ-14">
+              <mxGeometry x="0" y="0" width="280" height="30" as="geometry"/>
+            </mxCell>
+            <mxCell id="rAz4lTf7Gwv7dpfLh9yZ-16" value="Compute Engine" style="gcpComputeEngine;aspect=fixed;html=1;" vertex="1" parent="rAz4lTf7Gwv7dpfLh9yZ-14">
+              <mxGeometry x="90" y="50" width="100" height="70" as="geometry"/>
+            </mxCell>
+            <mxCell id="rAz4lTf7Gwv7dpfLh9yZ-17" value="App server" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="rAz4lTf7Gwv7dpfLh9yZ-14">
+              <mxGeometry x="105" y="140" width="70" height="30" as="geometry"/>
+            </mxCell>
+          </mxCell>
+          <mxCell id="rAz4lTf7Gwv7dpfLh9yZ-18" value="" style="group" vertex="1" parent="rAz4lTf7Gwv7dpfLh9yZ-4">
+            <mxGeometry x="370" y="230" width="280" height="120" as="geometry"/>
+            <mxRectangle x="370" y="230" width="280" height="30" as="bounds"/>
+            <mxCell id="rAz4lTf7Gwv7dpfLh9yZ-19" value="Private subnet 5&#xa;10.0.5.0/24" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=1;fontColor=#000000;" vertex="1" parent="rAz4lTf7Gwv7dpfLh9yZ-18">
+              <mxGeometry x="0" y="0" width="280" height="30" as="geometry"/>
+            </mxCell>
+            <mxCell id="rAz4lTf7Gwv7dpfLh9yZ-20" value="Compute Engine" style="gcpComputeEngine;aspect=fixed;html=1;" vertex="1" parent="rAz4lTf7Gwv7dpfLh9yZ-18">
+              <mxGeometry x="90" y="50" width="100" height="70" as="geometry"/>
+            </mxCell>
+            <mxCell id="rAz4lTf7Gwv7dpfLh9yZ-21" value="App server" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="rAz4lTf7Gwv7dpfLh9yZ-18">
+              <mxGeometry x="105" y="140" width="70" height="30" as="geometry"/>
+            </mxCell>
+          </mxCell>
+          <mxCell id="rAz4lTf7Gwv7dpfLh9yZ-22" value="" style="group" vertex="1" parent="rAz4lTf7Gwv7dpfLh9yZ-4">
+            <mxGeometry x="20" y="390" width="280" height="120" as="geometry"/>
+            <mxRectangle x="20" y="390" width="280" height="30" as="bounds"/>
+            <mxCell id="rAz4lTf7Gwv7dpfLh9yZ-23" value="Private subnet 3&#xa;10.0.3.0/24" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0
