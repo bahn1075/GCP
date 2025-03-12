@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2024-01-18T09:30:00.000Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="abcdefg1234567" version="21.6.8" type="device">
+<mxfile host="Electron" modified="2024-01-18T11:00:00.000Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="abcdefg1234567" version="21.6.8" type="device">
   <diagram name="GCP Architecture" id="some-unique-diagram-id">
     <mxGraphModel dx="1000" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -44,6 +44,7 @@
             <mxPoint x="480" y="130" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
+
 
         <mxCell id="zone-a" value="Zone A" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;dashed=1;" vertex="1" parent="1">
           <mxGeometry x="80" y="240" width="300" height="440" as="geometry" />
@@ -109,11 +110,12 @@
           </mxGeometry>
         </mxCell>
 
+
         <mxCell id="private-subnet-3-a" value="Private Subnet 3&#xa;10.0.3.0/24" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="100" y="600" width="120" height="60" as="geometry" />
         </mxCell>
 
-        <mxCell id="cloud-sql-primary" value="Cloud SQL" style="shape=mxgraph.gcp2.cloud_sql;fillColor=#4285F4;strokeColor=#2E67B2;fontColor=#ffffff" vertex="1" parent="1">
+        <mxCell id="cloud-sql-primary" value="Cloud SQL" style="shape=mxgraph.gcp2.cloud_sql;fillColor=#4285F4;strokeColor=#2E67B2;fontColor=#ffffff;verticalLabelPosition=bottom;verticalAlign=top" vertex="1" parent="1">
           <mxGeometry x="120" y="680" width="80" height="50" as="geometry" />
         </mxCell>
         <mxCell id="appA-sqlPrimary-arrow" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="instance-group-app-a" target="private-subnet-3-a">
@@ -122,6 +124,7 @@
         <mxCell id="private3-sqlPrimary-arrow" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="private-subnet-3-a" target="cloud-sql-primary">
           <mxGeometry width="50" height="50" relative="1" as="geometry"/>
         </mxCell>
+
 
         <mxCell id="public-subnet-b" value="Public Subnet 4&#xa;10.0.4.0/24" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="440" y="280" width="120" height="60" as="geometry" />
@@ -137,13 +140,4 @@
             <mxGeometry width="50" height="50" relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="nat-b" value="Cloud NAT" style="shape=mxgraph.gcp2.cloud_nat;fillColor=#4285F4;strokeColor=#2E67B2;fontColor=#ffffff" vertex="1" parent="1">
-          <mxGeometry x="570" y="365" width="60" height="40" as="geometry"/>
-        </mxCell>
-        <mxCell id="instanceGroupB-natB-arrow" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="instance-group-b" target="nat-b">
-            <mxGeometry width="50" height="50" relative="1" as="geometry"/>
-        </mxCell>
-      </root>
-    </mxGraphModel>
-  </diagram>
-</mxfile>
+        <mxCell id="nat-b" value="Cloud NAT" style="shape=mxgraph.gcp2.cloud_nat;fillColor=#428
