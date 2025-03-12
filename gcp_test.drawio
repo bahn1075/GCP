@@ -1,124 +1,145 @@
-<mxfile host="app.diagrams.net" modified="2024-05-16T02:10:28.162Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="7k6pUqK71-j8d2fKz86s" version="25.0.5" type="device">
-  <diagram name="Page-1" id="sJ8v0H2T4sX0x-72W-xU">
-    <mxGraphModel dx="1434" dy="931" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+<mxfile host="app.diagrams.net" modified="2024-05-03T01:44:16.585Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="F6L92_81vXU88s7fQoQ" version="23.3.1" type="device">
+  <diagram name="페이지-1" id="9Xwz2P7Fp-nQ47vV4R5Z">
+    <mxGraphModel dx="1434" dy="779" grid="10" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
-        <mxCell id="2" value="Region" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="40" y="20" width="770" height="780" as="geometry"/>
+        <mxCell id="10" value="Region" style="swimlane;fontStyle=1;align=center;verticalAlign=top;fillColor=none;dashed=1;strokeColor=#0080ff;startSize=20;pointerEvents=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="10" y="10" width="780" height="720" as="geometry"/>
         </mxCell>
-        <mxCell id="3" value="Users" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outline=0;" vertex="1" parent="1">
-          <mxGeometry x="380" y="40" width="60" height="80" as="geometry"/>
+        <mxCell id="11" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;strokeColor=#0080ff;" vertex="1" parent="10">
+          <mxGeometry x="20" y="60" width="740" height="640" as="geometry"/>
         </mxCell>
-        <mxCell id="4" value="Cloud Armor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="250" y="150" width="100" height="40" as="geometry"/>
+        <mxCell id="12" value="Availability Zone A" style="swimlane;fontStyle=1;align=center;verticalAlign=top;fillColor=none;dashed=1;startSize=20;pointerEvents=1;collapsible=0;" vertex="1" parent="11">
+          <mxGeometry x="20" y="40" width="340" height="580" as="geometry"/>
         </mxCell>
-        <mxCell id="5" value="Cloud CDN" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="450" y="150" width="100" height="40" as="geometry"/>
+        <mxCell id="13" value="Availability Zone B" style="swimlane;fontStyle=1;align=center;verticalAlign=top;fillColor=none;dashed=1;startSize=20;pointerEvents=1;collapsible=0;" vertex="1" parent="11">
+          <mxGeometry x="380" y="40" width="340" height="580" as="geometry"/>
         </mxCell>
-        <mxCell id="6" value="Cloud Load Balancing" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="350" y="250" width="120" height="40" as="geometry"/>
+        <mxCell id="14" value="VPC&lt;br&gt;10.0.0.0/16" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="12">
+          <mxGeometry x="10" y="10" width="60" height="40" as="geometry"/>
         </mxCell>
-        <mxCell id="7" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="410" y="120" as="sourcePoint"/>
-            <mxPoint x="410" y="150" as="targetPoint"/>
+        <mxCell id="15" value="External Users" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outline=0;" vertex="1" parent="10">
+          <mxGeometry x="380" y="20" width="30" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="Cloud CDN" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="10">
+          <mxGeometry x="300" y="100" width="80" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="Cloud Armor&lt;br&gt;(WAF)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="10">
+          <mxGeometry x="220" y="100" width="70" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="HTTP(S) Load Balancer" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="10">
+          <mxGeometry x="330" y="180" width="60" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="Cloud NAT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="12">
+          <mxGeometry x="70" y="280" width="60" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="Cloud NAT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="13">
+          <mxGeometry x="430" y="280" width="60" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="21" value="Internet Gateway" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="12">
+          <mxGeometry x="250" y="180" width="60" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="22" value="Public Subnet 1&lt;br&gt;10.0.1.0/24" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0fff7;strokeColor=#008f8f;" vertex="1" parent="12">
+          <mxGeometry x="70" y="70" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="23" value="Web Server&lt;br>(Compute Engine)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="12">
+          <mxGeometry x="70" y="120" width="120" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="24" value="Private Subnet 2&lt;br&gt;10.0.2.0/24" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0fff7;strokeColor=#008f8f;" vertex="1" parent="12">
+          <mxGeometry x="70" y="340" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="25" value="App Server&lt;br>(Compute Engine)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="12">
+          <mxGeometry x="70" y="390" width="120" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="26" value="Private Subnet 3&lt;br&gt;10.0.3.0/24" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0fff7;strokeColor=#008f8f;" vertex="1" parent="12">
+          <mxGeometry x="70" y="500" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="27" value="Primary DB&lt;br>(Cloud SQL)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="12">
+          <mxGeometry x="70" y="550" width="120" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="28" value="Public Subnet 4&lt;br&gt;10.0.4.0/24" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0fff7;strokeColor=#008f8f;" vertex="1" parent="13">
+          <mxGeometry x="430" y="70" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="29" value="Web Server&lt;br>(Compute Engine)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="13">
+          <mxGeometry x="430" y="120" width="120" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="30" value="Private Subnet 5&lt;br&gt;10.0.5.0/24" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0fff7;strokeColor=#008f8f;" vertex="1" parent="13">
+          <mxGeometry x="430" y="340" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="31" value="App Server&lt;br>(Compute Engine)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="13">
+          <mxGeometry x="430" y="390" width="120" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="32" value="Private Subnet 6&lt;br&gt;10.0.6.0/24" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0fff7;strokeColor=#008f8f;" vertex="1" parent="13">
+          <mxGeometry x="430" y="500" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="33" value="Secondary DB&lt;br>(Cloud SQL)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="13">
+          <mxGeometry x="430" y="550" width="120" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="34" value="Auto Scaling group" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="13">
+          <mxGeometry x="430" y="170" width="120" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="35" value="Auto Scaling group" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="13">
+          <mxGeometry x="430" y="440" width="120" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="36" value="Auto Scaling group" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="12">
+          <mxGeometry x="70" y="170" width="120" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="37" value="Auto Scaling group" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="12">
+          <mxGeometry x="70" y="440" width="120" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="399.5" y="80" as="sourcePoint"/>
+            <mxPoint x="360" y="100" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="8" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="300" y="120" as="sourcePoint"/>
-            <mxPoint x="300" y="150" as="targetPoint"/>
+        <mxCell id="39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="80" as="sourcePoint"/>
+            <mxPoint x="390" y="100" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="9" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="410" y="190" as="sourcePoint"/>
-            <mxPoint x="410" y="250" as="targetPoint"/>
+        <mxCell id="40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="349.5" y="140" as="sourcePoint"/>
+            <mxPoint x="360" y="180" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="10" value="VPC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
-          <mxGeometry x="70" y="320" width="710" height="450" as="geometry"/>
-        </mxCell>
-        <mxCell id="11" value="Availability Zone A" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="80" y="330" width="340" height="430" as="geometry"/>
-        </mxCell>
-        <mxCell id="12" value="Availability Zone B" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="430" y="330" width="340" height="430" as="geometry"/>
-        </mxCell>
-        <mxCell id="13" value="Public Subnet A (10.0.1.0/24)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="90" y="340" width="150" height="40" as="geometry"/>
-        </mxCell>
-        <mxCell id="14" value="Public Subnet B (10.0.4.0/24)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="440" y="340" width="150" height="40" as="geometry"/>
-        </mxCell>
-        <mxCell id="15" value="Compute Engine" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="90" y="400" width="150" height="40" as="geometry"/>
-        </mxCell>
-        <mxCell id="16" value="Compute Engine" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="440" y="400" width="150" height="40" as="geometry"/>
-        </mxCell>
-        <mxCell id="17" value="Private Subnet A (10.0.2.0/24)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="90" y="530" width="150" height="40" as="geometry"/>
-        </mxCell>
-        <mxCell id="18" value="Private Subnet B (10.0.5.0/24)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="440" y="530" width="150" height="40" as="geometry"/>
-        </mxCell>
-        <mxCell id="19" value="App Engine" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="90" y="580" width="150" height="40" as="geometry"/>
-        </mxCell>
-        <mxCell id="20" value="App Engine" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="440" y="580" width="150" height="40" as="geometry"/>
-        </mxCell>
-        <mxCell id="21" value="Private Subnet C (10.0.3.0/24)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="90" y="670" width="150" height="40" as="geometry"/>
-        </mxCell>
-        <mxCell id="22" value="Private Subnet D (10.0.6.0/24)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="440" y="670" width="150" height="40" as="geometry"/>
-        </mxCell>
-        <mxCell id="23" value="Cloud SQL (Primary)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="90" y="720" width="150" height="40" as="geometry"/>
-        </mxCell>
-        <mxCell id="24" value="Cloud SQL (Secondary)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="440" y="720" width="150" height="40" as="geometry"/>
-        </mxCell>
-        <mxCell id="25" value="Cloud NAT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="250" y="400" width="100" height="40" as="geometry"/>
-        </mxCell>
-        <mxCell id="26" value="Cloud NAT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="600" y="400" width="100" height="40" as="geometry"/>
-        </mxCell>
-        <mxCell id="27" value="Instance Group" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="90" y="380" width="150" height="70" as="geometry"/>
-        </mxCell>
-        <mxCell id="28" value="Instance Group" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="440" y="380" width="150" height="70" as="geometry"/>
-        </mxCell>
-        <mxCell id="29" value="Instance Group" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="90" y="560" width="150" height="70" as="geometry"/>
-        </mxCell>
-        <mxCell id="30" value="Instance Group" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="440" y="560" width="150" height="70" as="geometry"/>
-        </mxCell>
-        <mxCell id="31" value="Internet Gateway" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
-          <mxGeometry x="370" y="330" width="80" height="40" as="geometry"/>
-        </mxCell>
-        <mxCell id="32" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="410" y="290" as="sourcePoint"/>
-            <mxPoint x="410" y="330" as="targetPoint"/>
+        <mxCell id="41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="350" y="140" as="sourcePoint"/>
+            <mxPoint x="360" y="180" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="33" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="310" y="400" as="sourcePoint"/>
-            <mxPoint x="370" y="350" as="targetPoint"/>
+        <mxCell id="42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="240" as="sourcePoint"/>
+            <mxPoint x="280" y="180" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="34" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+        <mxCell id="43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="240" as="sourcePoint"/>
+            <mxPoint x="460" y="180" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="44" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="600" y="400" as="sourcePoint"/>
-            <mxPoint x="450" y="350" as="targetPoint"/>
+            <mxPoint x="190" y="145" as="sourcePoint"/>
+            <mxPoint x="430" y="145" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="45" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="190" y="415" as="sourcePoint"/>
+            <mxPoint x="430" y="415" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="46" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="190" y="575" as="sourcePoint"/>
+            <mxPoint x="430" y="575" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
       </root>
